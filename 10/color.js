@@ -3,6 +3,7 @@
  */
 /*jslint nomen: true, devel: true, browser: true, vars: true, plusplus: true*/
 /*global 'kintone': false */
+
 (function () {
   
     "use strict";
@@ -27,5 +28,5 @@
             elDetail[i].style.backgroundColor = fieldColor;
             elLimitDay[i].style.backgroundColor = fieldColor;
         }
-    };
+    });
 }());
