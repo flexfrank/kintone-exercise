@@ -8,9 +8,7 @@
   
     "use strict";
     kintone.events.on('app.record.create.show', function (event) {
-        var record = event.record;
-        record['Customer']['value'] =  'この文字列で上書き';
-        record['Person']['value'] = [{'code': test, 'name': テスト}];
+        event.record.Person.value = [{'code': 'test', 'name': 'テスト'}];
         return event;
     });
 }());
