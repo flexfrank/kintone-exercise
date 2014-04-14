@@ -11,7 +11,7 @@
     kintone.events.on('app.record.index.show', function (event) {
   
         var user = kintone.getLoginUser();      // ログインユーザ情報
-        var loginFieldColor = '#e5f0ff';        // ログインユーザのフィールド色
+        var loginFieldColor = '#F18B8C';        // ログインユーザのフィールド色
         var toDay = dateFormat(new Date(),0);   // 本日日付フォーマット処理
         var beforeLimitDay = 5;                 // 期限**日前の警告用 (Day単位)
   
