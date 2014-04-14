@@ -28,5 +28,5 @@
             elDetail[i].style.backgroundColor = fieldColor;
             elLimitDay[i].style.backgroundColor = fieldColor;
         }
-    };
+    });
 }());
