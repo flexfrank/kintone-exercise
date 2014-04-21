@@ -29,4 +29,4 @@
             elLimitDay[i].style.backgroundColor = fieldColor;
         }
     });
-})();
+}());
