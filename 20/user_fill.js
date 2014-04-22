@@ -9,7 +9,6 @@
     "use strict";
     kintone.events.on('app.record.create.show', function (event) {
         event.record.Person.value = [{'code': 'ryota-kaneko', 'name': '金子'}];
-        
         return event;
     });
 }());
