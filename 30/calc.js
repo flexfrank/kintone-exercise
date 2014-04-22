@@ -14,8 +14,11 @@
         //既に入っている要素を削除
         headerSpace.innerHTML = '';
         
-        sum = parseInt(event.records[0]['数値_1'].value, 10);
-        textNode = document.createTextNode('合計金額: ' + String(sum));
+        for (var i = 0; i < event.records.length; i++) {
+            sum += parseFloat(event.records[i]['数値_1'].value, 10);
+        }
+        sum = sum / event.records.length
+        textNode = document.createTextNode('平均金額: ' + String(sum));
         headerSpace.style.fontSize = '24pt';
         headerSpace.style.color = '#006400';
         headerSpace.style.fontWeight = 'bolder';
