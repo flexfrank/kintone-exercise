@@ -16,6 +16,10 @@
         
         sum = parseInt(event.records[0]['数値_1'].value, 10);
         textNode = document.createTextNode('合計金額: ' + String(sum));
+        headerSpace.style.fontSize = '24pt';
+        headerSpace.style.color = '#006400';
+        headerSpace.style.fontWeight = 'bolder';
+    
         headerSpace.appendChild(textNode);
     });
 }());
