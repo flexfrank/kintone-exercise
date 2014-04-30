@@ -15,7 +15,7 @@
         
         
         
-        event.record.Person.value = [{'code': 'test', 'name': user.name}];
+        event.record.Person.value = [{'code': user.code, 'name': user.name}];
         
         return event;
     });
