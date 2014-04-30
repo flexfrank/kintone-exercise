@@ -8,7 +8,7 @@
   
     "use strict";
     kintone.events.on('app.record.create.show', function (event) {
-        event.record.Person.value = [{'code': 'test', 'name': '勅使河原由佳'}];
+        event.record.Person.value = [{'code': 'yuka-teshigawara', 'name': '勅使河原由佳'}];
         
         return event;
     });
