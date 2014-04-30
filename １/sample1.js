@@ -1,5 +1,5 @@
 /*
- * ƒƒOƒCƒ“ƒ†[ƒU[‚ª’S“–‚µ‚Ä‚¢‚éƒŒƒR[ƒh‚É”wŒiF‚ğ‚Â‚¯‚éƒTƒ“ƒvƒ‹ƒvƒƒOƒ‰ƒ€
+ * ãƒ­ã‚°ã‚¤ãƒ³ãƒ¦ãƒ¼ã‚¶ãƒ¼ãŒæ‹…å½“ã—ã¦ã„ã‚‹ãƒ¬ã‚³ãƒ¼ãƒ‰ã«èƒŒæ™¯è‰²ã‚’ã¤ã‘ã‚‹ã‚µãƒ³ãƒ—ãƒ«ãƒ—ãƒ­ã‚°ãƒ©ãƒ 
  * Copyright (c) 2014 Cybozu
  *
  * Licensed under the MIT License
@@ -7,15 +7,15 @@
 (function () {
   
     "use strict";
-    // ƒŒƒR[ƒhˆê——‚Ì•\¦‚ÉƒtƒB[ƒ‹ƒh’l‚ÌğŒ‚É‰‚¶‚ÄA•¶šF‚ÆƒtƒB[ƒ‹ƒh‚Ì”wŒiF‚ğ•ÏX‚·‚é
+    // ãƒ¬ã‚³ãƒ¼ãƒ‰ä¸€è¦§ã®è¡¨ç¤ºæ™‚ã«ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰å€¤ã®æ¡ä»¶ã«å¿œã˜ã¦ã€æ–‡å­—è‰²ã¨ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èƒŒæ™¯è‰²ã‚’å¤‰æ›´ã™ã‚‹
     kintone.events.on('app.record.index.show', function (event) {
   
-        var user = kintone.getLoginUser();      // ƒƒOƒCƒ“ƒ†[ƒUî•ñ
-        var loginFieldColor = '#e5f0ff';        // ƒƒOƒCƒ“ƒ†[ƒU‚ÌƒtƒB[ƒ‹ƒhF
-        var toDay = dateFormat(new Date(),0);   // –{“ú“ú•tƒtƒH[ƒ}ƒbƒgˆ—
-        var beforeLimitDay = 5;                 // ŠúŒÀ**“ú‘O‚ÌŒx—p (Day’PˆÊ)
+        var user = kintone.getLoginUser();      // ãƒ­ã‚°ã‚¤ãƒ³ãƒ¦ãƒ¼ã‚¶æƒ…å ±
+        var loginFieldColor = '#f18b8c';        // ãƒ­ã‚°ã‚¤ãƒ³ãƒ¦ãƒ¼ã‚¶ã®ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰è‰²
+        var toDay = dateFormat(new Date(),0);   // æœ¬æ—¥æ—¥ä»˜ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆå‡¦ç†
+        var beforeLimitDay = 5;                 // æœŸé™**æ—¥å‰ã®è­¦å‘Šç”¨ (Dayå˜ä½)
   
-        // ˆê——‚Ì—v‘f‚ğæ“¾
+        // ä¸€è¦§ã®è¦ç´ ã‚’å–å¾—
         var elCustomer = kintone.app.getFieldElements('Customer');
         var elStatus = kintone.app.getFieldElements('Status');
         var elPerson = kintone.app.getFieldElements('Person');
@@ -23,25 +23,25 @@
         var elDetail = kintone.app.getFieldElements('Detail');
         var elLimitDay = kintone.app.getFieldElements('LimitDay');
   
-        // ƒŒƒR[ƒhŠúŒÀ“ú‚Æ’S“–Òƒ`ƒFƒbƒNˆ—
+        // ãƒ¬ã‚³ãƒ¼ãƒ‰æœŸé™æ—¥ã¨æ‹…å½“è€…ãƒã‚§ãƒƒã‚¯å‡¦ç†
         for (var i = 0; i < event.records.length; i++) {
             var record = event.records[i];
   
-            // ŠúŒÀ“ú‚Ìæ“¾‚ÆƒtƒH[ƒ}ƒbƒgˆ—
+            // æœŸé™æ—¥ã®å–å¾—ã¨ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆå‡¦ç†
             var tmpdate = new Array();
             tmpdate = record['LimitDay']['value'].split("-");
             var reclimitday = new Date(tmpdate[0], tmpdate[1]-1, tmpdate[2]);
   
-            // ‘Î‰’S“–Ò‚ÌArray‚©‚ç’S“–Ò–¼‚ğ’Šo
+            // å¯¾å¿œæ‹…å½“è€…ã®Arrayã‹ã‚‰æ‹…å½“è€…åã‚’æŠ½å‡º
             var recperson = record['Person']['value'];
             var personList = new Array();
             for (var num = 0; num < recperson.length; num++){
                 personList.push(recperson[num].name);
             }
   
-            // ’S“–Òƒ`ƒFƒbƒN
+            // æ‹…å½“è€…ãƒã‚§ãƒƒã‚¯
             if (personList.indexOf(user.name) > -1) {
-                // ‘Î‰’S“–Ò‚ªƒƒOƒCƒ“ƒ†[ƒU‚Ìê‡‚ÍƒtƒB[ƒ‹ƒhF‚ğ•ÏX‚·‚é
+                // å¯¾å¿œæ‹…å½“è€…ãŒãƒ­ã‚°ã‚¤ãƒ³ãƒ¦ãƒ¼ã‚¶ã®å ´åˆã¯ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰è‰²ã‚’å¤‰æ›´ã™ã‚‹
                 elCustomer[i].style.backgroundColor = loginFieldColor;
                 elStatus[i].style.backgroundColor = loginFieldColor;
                 elPerson[i].style.backgroundColor = loginFieldColor;
@@ -50,36 +50,36 @@
                 elLimitDay[i].style.backgroundColor = loginFieldColor;
             }
   
-            // –¢Š®—¹ƒŒƒR[ƒh‚ÌŠúŒÀ“úƒ`ƒFƒbƒN
-            if (record['Status']['value'] != "Š®—¹"){
-                // ŠúŒÀØ‚êƒŒƒR[ƒh‚ğÔš‚É‚·‚é
+            // æœªå®Œäº†ãƒ¬ã‚³ãƒ¼ãƒ‰ã®æœŸé™æ—¥ãƒã‚§ãƒƒã‚¯
+            if (record['Status']['value'] != "å®Œäº†"){
+                // æœŸé™åˆ‡ã‚Œãƒ¬ã‚³ãƒ¼ãƒ‰ã‚’èµ¤å­—ã«ã™ã‚‹
                 if(dateFormat(reclimitday,0) < toDay){
                     elLimitDay[i].style.color = 'red';
                     elLimitDay[i].style.fontWeight = 'bold';
                 }
-                // ŠúŒÀ‚ª**“ú‘O‚ÌƒŒƒR[ƒh‚ğÂš‚É‚·‚é
+                // æœŸé™ãŒ**æ—¥å‰ã®ãƒ¬ã‚³ãƒ¼ãƒ‰ã‚’é’å­—ã«ã™ã‚‹
                 else if (dateFormat(reclimitday,beforeLimitDay) <= toDay){
                     elLimitDay[i].style.color = 'blue';
                 }
             }
         }
   
-        // ƒƒOƒCƒ“ƒ†[ƒU‚Ì–¢Š®—¹‚ÅŠúŒÀØ‚ê‚ÌƒŒƒR[ƒh”‚ğ•\¦‚·‚é
-        // ƒAƒvƒŠID‚ğæ“¾
+        // ãƒ­ã‚°ã‚¤ãƒ³ãƒ¦ãƒ¼ã‚¶ã®æœªå®Œäº†ã§æœŸé™åˆ‡ã‚Œã®ãƒ¬ã‚³ãƒ¼ãƒ‰æ•°ã‚’è¡¨ç¤ºã™ã‚‹
+        // ã‚¢ãƒ—ãƒªIDã‚’å–å¾—
         var appID = kintone.app.getId();
-        // ƒNƒGƒŠ•¶‚Ìİ’è
-        var qryInfo = 'Person in (LOGINUSER()) and Status not in ("Š®—¹") and LimitDay < TODAY()';
+        // ã‚¯ã‚¨ãƒªæ–‡ã®è¨­å®š
+        var qryInfo = 'Person in (LOGINUSER()) and Status not in ("å®Œäº†") and LimitDay < TODAY()';
   
-        // ”ñ“¯ŠúƒŠƒNƒGƒXƒg‚ğs‚¤
+        // éåŒæœŸãƒªã‚¯ã‚¨ã‚¹ãƒˆã‚’è¡Œã†
         kintone.api('/k/v1/records', 'GET', { app: appID, query: qryInfo}, function (resp) {
             if(resp['records'].length > 0){
-                alert("ŠúŒÀ‚ªØ‚ê‚Ä‚¢‚é "+user.name+" ‚³‚ñ‚ÌƒŒƒR[ƒh‚ª "+resp['records'].length+"Œ‚ ‚è‚Ü‚·B");
+                alert("æœŸé™ãŒåˆ‡ã‚Œã¦ã„ã‚‹ "+user.name+" ã•ã‚“ã®ãƒ¬ã‚³ãƒ¼ãƒ‰ãŒ "+resp['records'].length+"ä»¶ã‚ã‚Šã¾ã™ã€‚");
             }
         });
   
-        // “ú•tƒtƒH[ƒ}ƒbƒgŠÖ”
+        // æ—¥ä»˜ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆé–¢æ•°
         function dateFormat(date,op) {
-            // yyyy/MM/ddŒ`®‚É•ÏŠ·A“ú|op•ª‚ÌDate‚ğreturn‚·‚é
+            // yyyy/MM/ddå½¢å¼ã«å¤‰æ›ã€æ—¥ï¼opåˆ†ã®Dateã‚’returnã™ã‚‹
             var yy = date.getFullYear();
             var mm = date.getMonth() < 9 ? '0' + date.getMonth() + 1 : date.getMonth() + 1;
             var dd = date.getDate() < 10 ? '0' + date.getDate() - op : date.getDate() - op;
