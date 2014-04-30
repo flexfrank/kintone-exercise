@@ -10,16 +10,24 @@
     // レコード一覧の表示時にフィールドの背景色を変更する
     kintone.events.on('app.record.index.show', function (event) {
             // ログインユーザのフィールド色
-        var fieldColor = '#e5f0ff',
+        var fieldColor = '#e5f0ff';
             // 一覧の要素を取得
-            elCustomer = kintone.app.getFieldElements('Customer'),
+            /*elCustomer = kintone.app.getFieldElements('Customer'),
             elStatus = kintone.app.getFieldElements('Status'),
             elPerson = kintone.app.getFieldElements('Person'),
             elQType = kintone.app.getFieldElements('QType'),
             elDetail = kintone.app.getFieldElements('Detail'),
             elLimitDay = kintone.app.getFieldElements('LimitDay'),
-            i;
-  
+            i;*/
+        var elCustomer = kintone.app.getFieldElements('Customer');
+        var elStatus = kintone.app.getFieldElements('Status');
+        var elPerson = kintone.app.getFieldElements('Person');
+        var elQType = kintone.app.getFieldElements('QType');
+        var elDetail = kintone.app.getFieldElements('Detail');
+        var elLimitDay = kintone.app.getFieldElements('LimitDay');
+        var  i;
+        
+        
         for (i = 0; i < event.records.length; i++) {
             elCustomer[i].style.backgroundColor = fieldColor;
             elStatus[i].style.backgroundColor = fieldColor;
@@ -28,5 +36,5 @@
             elDetail[i].style.backgroundColor = fieldColor;
             elLimitDay[i].style.backgroundColor = fieldColor;
         }
-    };
+    });
 }());
