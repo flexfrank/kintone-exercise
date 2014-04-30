@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2014 Cybozu
  * Licensed under the MIT License
  */
@@ -28,5 +28,5 @@
             elDetail[i].style.backgroundColor = fieldColor;
             elLimitDay[i].style.backgroundColor = fieldColor;
         }
-    };
+    });
 }());
