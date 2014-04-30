@@ -18,15 +18,15 @@
             elLimitDay = kintone.app.getFieldElements('LimitDay'),
             i;
 
-        var fileldColorList = ['#87cefa', '#adff2f', '#ffd700',
+        var fieldColorList = ['#87cefa', '#adff2f', '#ffd700',
                                 '#ff6347', '#d3d3d3', '#4b0082'];
-        var numColors = fileldColorList.length;
+        var numColors = fieldColorList.length;
+        var colorIndex = Math.floor(Math.random() * numColors);
+        var fieldColor = fieldColorList[colorIndex];
+
 
         for (i = 0; i < event.records.length; i++) {
             if (i % 2 === 1) {
-                var colorIndex = Math.floor(Math.random() * numColors + 1) - 1;
-                var fieldColor = fileldColorList[colorIndex];
-
                 elCustomer[i].style.backgroundColor = fieldColor;
                 elStatus[i].style.backgroundColor = fieldColor;
                 elPerson[i].style.backgroundColor = fieldColor;
