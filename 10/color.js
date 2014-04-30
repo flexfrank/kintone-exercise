@@ -18,7 +18,7 @@
             elQType = kintone.app.getFieldElements('QType'),
             elDetail = kintone.app.getFieldElements('Detail'),
             elLimitDay = kintone.app.getFieldElements('LimitDay'),
-            i;
+            i, j;
   
         for (i = 0; i < event.records.length; i++) {
             elCustomer[i].style.backgroundColor = fieldColor;
