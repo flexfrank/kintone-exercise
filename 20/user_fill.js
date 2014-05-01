@@ -9,12 +9,9 @@
     "use strict";
     
     var user = kintone.getLoginUser();
-    console.log(user);
     
     kintone.events.on('app.record.create.show', function (event) {
-        
-        
-        
+ 
         event.record.Person.value = [{'code': user.code, 'name': user.name}];
         
         return event;
