@@ -18,6 +18,6 @@
         
         textNode = document.createTextNode('合計金額: ' + sum);
         headerSpace.appendChild(textNode);
-        headerSpace.style.fontSize = '24pt'
+        headerSpace.style.fontSize = '24pt';
     });
 }());
