@@ -14,7 +14,7 @@
         //既に入っている要素を削除
         headerSpace.innerHTML = '';
         
-        sum = parseInt(event.records[1]['数値_1'].value, 10);
+        sum = parseInt(event.records[0]['数値_1'].value, 10);
         textNode = document.createTextNode('合計金額: ' + sum);
         headerSpace.appendChild(textNode);
     });
