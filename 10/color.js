@@ -10,7 +10,7 @@
     // レコード一覧の表示時にフィールドの背景色を変更する
     kintone.events.on('app.record.index.show', function (event) {
             // ログインユーザのフィールド色
-        var fieldColor = '#e5f0ff';
+        var fieldColorList = ['#87cefa', '#adff2f', '#ffd700', '#ff6347', '#d3d3d3', '#4b0082'];
             // 一覧の要素を取得
         var elCustomer = kintone.app.getFieldElements('Customer');
         var elStatus = kintone.app.getFieldElements('Status');
@@ -19,7 +19,9 @@
         var elDetail = kintone.app.getFieldElements('Detail');
         var elLimitDay = kintone.app.getFieldElements('LimitDay');
         var i;
-  
+        var random = Math.floor(Math.random() * 6);
+        var fieldColor = fieldColorList[random];
+        
         for (i = 0; i < event.records.length; i++) {
             if (i % 2 !== 0) {
                 elCustomer[i].style.backgroundColor = fieldColor;
