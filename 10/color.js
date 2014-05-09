@@ -20,7 +20,7 @@
         var elLimitDay = kintone.app.getFieldElements('LimitDay');
         var i;
   
-        for (i = 0; i < event.records.length; i++) {
+        for (i = 0; i < event.records.length; i = i + 2) {
             elCustomer[i].style.backgroundColor = fieldColor;
             elStatus[i].style.backgroundColor = fieldColor;
             elPerson[i].style.backgroundColor = fieldColor;
