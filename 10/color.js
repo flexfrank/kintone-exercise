@@ -21,13 +21,15 @@
         var i;
         var randnum = Math.floor(Math.random() * 6);
                           
-        for (i = 0; i < event.records.length; i = i + 2) {
+        for (i = 0; i < event.records.length; i++) {
+            i = i * 2;
             elCustomer[i].style.backgroundColor = fieldColor[randnum];
             elStatus[i].style.backgroundColor = fieldColor[randnum];
             elPerson[i].style.backgroundColor = fieldColor[randnum];
             elQType[i].style.backgroundColor = fieldColor[randnum];
             elDetail[i].style.backgroundColor = fieldColor[randnum];
             elLimitDay[i].style.backgroundColor = fieldColor[randnum];
+            
         }
     });
 }());
